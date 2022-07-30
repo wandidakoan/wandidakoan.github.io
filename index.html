@@ -11,8 +11,13 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
 
+    <!-- Animasi https://michalsnik.github.io/aos/ -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
+
+
 
     <title>Wandi Dakoan</title>
   </head>
@@ -48,7 +53,7 @@
     <section class="jumbotron text-center">
       <img src="img/wandi.webp" alt="Wandi Dakoan" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Wandi Dakoan</h1>
-      <p class="lead">Seo Specialist & Programer</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -68,10 +73,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center mb">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" >
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi necessitatibus exercitationem eveniet voluptatum, amet voluptatem laudantium possimus. Quibusdam, fuga. Sequi.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, quos blanditiis sapiente cumque, maxime alias vero aspernatur, est dolorum possimus debitis? Sit asperiores error nam!</p>
           </div>
         </div>
@@ -147,6 +152,70 @@
     </section>
     <!-- Akhir Projects -->
 
+    <!-- Galery -->
+    <section id="galery">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Galery</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl1(1).jpg" alt="gambar 1" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl2(1).jpg" alt="gambar 2" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl3(1).jpg" alt="gambar 3" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl4(1).jpg" alt="gambar 4" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl5(1).jpg" alt="gambar 5" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl6(1).jpg" alt="gambar 6" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl7(1).jpg" alt="gambar 7" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl8(1).jpg" alt="gambar 8" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl9(1).jpg" alt="gambar 9" class="img-fluid galery-img">
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="#">
+              <img src="img/girl/girl10(1).jpg" alt="gambar 10" class="img-fluid galery-img">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir galery -->
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -200,6 +269,30 @@
     </footer>
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const galeryImg = document.querySelectorAll('.galery-img');
+      galeryImg.forEach((img, i) => {
+        img.dataset.aos = 'fade-down';
+        img.dataset.aosDelay = i * 100;
+        img.dataset.aosDuration = 1000;
+      });
+
+      AOS.init({
+        once: true
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', {duration: 1.5, delay: 1, text: 'Blogger | Seo Specialist'});
+      gsap.from('.jumbotron img', {duration: 1, y: -100, opacity: 0, ease: 'bounce'});
+      gsap.from('.display-4', {duration: 1, x: -50, delay: 0.5, opacity: 0, ease: 'back'});
+      gsap.from('.navbar-brand', {duration: 1, x: -50, delay: 0.5, opacity: 0, ease: 'back'});
+    </script>
 
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyd_kWHFwjooEmG_PT5-wi5JqxPRIWRIk0Mu5KmikVJ9JHXDNIy-vmmkaMblDBfQTeY/exec";
